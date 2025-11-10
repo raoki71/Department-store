@@ -1,0 +1,45 @@
+# Compiled class files
+*.class
+
+# Jar files
+*.jar
+*.war
+*.ear
+
+# Maven build artifacts
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle build artifacts
+.gradle/
+build/
+
+# IDE-specific files (IntelliJ IDEA, Eclipse, VS Code)
+.idea/
+.project
+.classpath
+.settings/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.launch
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Temporary files
+*~
+*.bak
+*.swp
