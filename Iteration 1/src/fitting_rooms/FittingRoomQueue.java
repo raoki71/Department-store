@@ -1,3 +1,7 @@
+// Jaida Slife
+// jaidarm@iastate.edu
+// 385211868
+
 package fitting_rooms;
 
 import java.util.List;
@@ -17,4 +21,5 @@ public class FittingRoomQueue {
     public List<ClothingItem> getItems() {
     	return items; 
     }
+
 }
