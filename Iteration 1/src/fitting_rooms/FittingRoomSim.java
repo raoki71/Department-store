@@ -1,3 +1,7 @@
+// Jaida Slife
+// jaidarm@iastate.edu
+// 385211868
+
 package fitting_rooms;
 
 import java.util.Arrays;
@@ -54,3 +58,4 @@ public class FittingRoomSim {
         manager.displayQueueStatus(); // Queue is now empty
     }
 }
+
