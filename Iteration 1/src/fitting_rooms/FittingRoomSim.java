@@ -50,7 +50,7 @@ public class FittingRoomSim {
        manager.vacateRoomAndCheckQueue(3, cust3Returned);
        
        
-       //customer 4 checks out, but with wrong number of initial items
+       //customer 4 checks out
        List<ClothingItem> cust4Returned = Arrays.asList(new ClothingItem("Pants", "8"),
     		   											new ClothingItem("Jacket", "L"));
        manager.vacateRoomAndCheckQueue(1, cust4Returned);
@@ -58,5 +58,6 @@ public class FittingRoomSim {
         manager.displayQueueStatus(); // Queue is now empty
     }
 }
+
 
 
