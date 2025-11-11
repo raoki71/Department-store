@@ -45,4 +45,5 @@ Thumbs.db
 *.swp
 
 .Rhistory
-.classpath.metadata
+.classpath
+.metadata
