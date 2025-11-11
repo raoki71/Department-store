@@ -1,4 +1,4 @@
-package cleaning_store;
+package clean_store;
 import java.util.Date;
 
 public class OpenTime {
