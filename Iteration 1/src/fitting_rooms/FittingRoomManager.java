@@ -1,3 +1,7 @@
+// Jaida Slife
+// jaidarm@iastate.edu
+// 385211868
+
 package fitting_rooms;
 
 import java.util.ArrayList;
@@ -104,3 +108,4 @@ public class FittingRoomManager {
         }
     }
 }
+
