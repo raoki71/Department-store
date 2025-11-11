@@ -1,3 +1,7 @@
+// Jaida Slife
+// jaidarm@iastate.edu
+// 385211868
+
 package fitting_rooms;
 
 // this class gives clothing item a name and size
@@ -19,3 +23,4 @@ public String toString() {
 
 	
 }
+
