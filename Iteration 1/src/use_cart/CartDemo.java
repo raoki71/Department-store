@@ -23,15 +23,21 @@ public class CartDemo {
 
         // Add items to the cart
         customer.addItemToCart(item1);
+        cart.getItems();
         customer.addItemToCart(item2);
+        cart.getItems();
         customer.addItemToCart(item3);
+        cart.getItems();
         customer.addItemToCart(item4);
+        cart.getItems();
 
         // Remove an item from the cart
         customer.removeItemFromCart(item2);
+        cart.getItems();
 
         // Try to add item4 again
         customer.addItemToCart(item4);
+        cart.getItems();
 
         // Abandon cart
         customer.abandonCart(system);
