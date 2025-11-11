@@ -1,3 +1,5 @@
+package cleaning_store;
+import Item;
 
 public class Store {
 	

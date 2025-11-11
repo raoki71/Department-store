@@ -1,3 +1,4 @@
+package cleaning_store;
 public abstract class Employee {
 	private String name;
 	private double salary;
