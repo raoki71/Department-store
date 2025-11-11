@@ -13,14 +13,14 @@ public class FittingRoomSim {
         // Initialize with a limited resource: only 2 rooms
         FittingRoomManager manager = new FittingRoomManager(3); 
         
-        // Customer 1 and 2 take rooms 1 and 2
+        // Customer 1 arrives
         manager.enterLine("CUST-1", Arrays.asList(new ClothingItem("Jacket", "S"),
         										  new ClothingItem("Jeans", "6"),
         										  new ClothingItem("Dress", "M")));
-        //Customer 2
+        //Customer 2 arrives
         manager.enterLine("CUST-2", Arrays.asList(new ClothingItem("Dress", "L")));
         
-        // Customer 3 arrives - Queue is now needed
+        // Customer 3 arrives 
         manager.enterLine("CUST-3", Arrays.asList(new ClothingItem("Jeans", "4"),
         										  new ClothingItem("Sweatpants","M"),
         										  new ClothingItem("Sweatpants", "S")));
@@ -58,4 +58,5 @@ public class FittingRoomSim {
         manager.displayQueueStatus(); // Queue is now empty
     }
 }
+
 
