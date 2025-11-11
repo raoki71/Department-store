@@ -43,3 +43,6 @@ Thumbs.db
 *~
 *.bak
 *.swp
+
+.Rhistory
+.classpath.metadata
