@@ -1,4 +1,4 @@
-package use_cases;
+package fitting_rooms;
 
 // this class gives clothing item a name and size
 

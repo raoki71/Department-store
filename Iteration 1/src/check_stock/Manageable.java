@@ -1,4 +1,4 @@
-package Iteration1;
+package check_stock;
 
 public interface Manageable {
     void loadFromFile();

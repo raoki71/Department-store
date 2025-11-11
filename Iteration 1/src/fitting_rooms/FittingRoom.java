@@ -1,4 +1,4 @@
-package use_cases;
+package fitting_rooms;
 
 import java.util.ArrayList;
 import java.util.List;

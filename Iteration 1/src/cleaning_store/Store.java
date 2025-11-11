@@ -1,5 +1,5 @@
 package cleaning_store;
-import Item;
+import primary.Item;
 
 public class Store {
 	
