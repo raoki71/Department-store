@@ -67,6 +67,5 @@ public class Custodian extends Employee {
 //		custodian.cleanArea(floorMap);
 //		custodian.returnCleaningTools(tool);
 //		custodian.checkOutShift(shiftwork);
-//		
 //	}
 }
