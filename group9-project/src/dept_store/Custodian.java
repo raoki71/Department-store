@@ -54,18 +54,18 @@ public class Custodian extends Employee {
 		System.out.println(name + " cleans section " + floorMap.getSection() + " at " +floorMap.getFloor());
 	}
 	
-	public static void main(String[] args) {
-		Custodian custodian = new Custodian("John", 120, "cleaner");
-		ShiftWork shiftwork = new ShiftWork();
-		Time startTime = new Time(17, 0, 0);
-		Time endTime = new Time(19, 0, 0);
-		shiftwork.schedule(Weekday.Mon, startTime, endTime);
-		shiftwork.assignShift(custodian);
-		custodian.checkInShift(shiftwork);
-		FloorMap floorMap = new FloorMap("1F", Direction.W, 38);
-		String tool = custodian.getCleaningTools();
-		custodian.cleanArea(floorMap);
-		custodian.returnCleaningTools(tool);
-		custodian.checkOutShift(shiftwork);
-	}
+//	public static void main(String[] args) {
+//		Custodian custodian = new Custodian("John", 120, "cleaner");
+//		ShiftWork shiftwork = new ShiftWork();
+//		Time startTime = new Time(17, 0, 0);
+//		Time endTime = new Time(19, 0, 0);
+//		shiftwork.schedule(Weekday.Mon, startTime, endTime);
+//		shiftwork.assignShift(custodian);
+//		custodian.checkInShift(shiftwork);
+//		FloorMap floorMap = new FloorMap("1F", Direction.W, 38);
+//		String tool = custodian.getCleaningTools();
+//		custodian.cleanArea(floorMap);
+//		custodian.returnCleaningTools(tool);
+//		custodian.checkOutShift(shiftwork);
+//	}
 }
