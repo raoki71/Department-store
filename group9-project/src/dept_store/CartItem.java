@@ -1,46 +1,32 @@
 package dept_store;
 
-public class CartItem extends Item{
-    public CartItem(String itemID, String name, double price, int quantity) {
-		super(itemID, name, price, quantity);
-		// TODO Auto-generated constructor stub
-	}
+public class CartItem {
 
-	private int cartItemId;
-    private Item item;
-    private int quantity; 
+    private String lineId;
+    private String name;
     private double unitPrice;
+    private int quantity;
 
-    public int getCartItemId() {
-        return cartItemId;
-    }
-
-    public void setCartItemId(int cartItemId) {
-        this.cartItemId = cartItemId;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
+    public CartItem(String lineId, String name, double unitPrice, int quantity) {
+        this.lineId = lineId;
+        this.name = name;
+        this.unitPrice = unitPrice;
         this.quantity = quantity;
+    }
+
+    public String getLineId() {
+        return lineId;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public double getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
+    public int getQuantity() {
+        return quantity;
     }
-
 }

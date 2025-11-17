@@ -11,7 +11,7 @@ public class ReturnController {
         this.returnService = returnService;
     }
 
-    public ReturnRecord startReturn(String receiptNumber, String lineId, boolean conditionOk) {
+    public ReturnRecords startReturn(String receiptNumber, String lineId, boolean conditionOk) {
         Sale sale = saleRepo.findByReceiptNumber(receiptNumber);
         return returnService.processReturn(sale, lineId, conditionOk);
     }

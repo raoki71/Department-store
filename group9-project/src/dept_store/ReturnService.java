@@ -1,4 +1,8 @@
 package dept_store;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
+
 public class ReturnService {
 
     private final InventoryService inventoryService;
@@ -9,32 +13,32 @@ public class ReturnService {
         this.paymentService = pay;
     }
 
-    public ReturnRecord processReturn(Sale sale, String lineId, boolean conditionOk) {
+    public ReturnRecords processReturn(Sale sale, String itemName, boolean conditionOk) {
         if (sale == null) throw new IllegalArgumentException("Sale not found");
         if (!conditionOk) throw new IllegalStateException("Item not in good quality");
 
-        SaleLineItem item = sale.getLineItems()
+
+        System.out.println("Items in sale " + sale.getReceiptNumber() + ":");
+        sale.getCartItems().forEach(ci ->
+                System.out.println(" - " + ci.getName() + " x" + ci.getQuantity())
+        );
+
+        CartItem item = sale.getCartItems()
                 .stream()
-                .filter(li -> li.getLineId().equals(lineId))
+                .filter(ci -> ci.getName().equals(itemName))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("Item not in sale"));
 
-        double refund = item.getUnitPrice() * item.getQuantity();
+        int refundInt = (int) (item.getUnitPrice() * item.getQuantity());
 
-        // update inventory
-        inventoryService.addBackToInventory(item.getProduct(), item.getQuantity());
+        inventoryService.addBackToInventory(item.getName(), item.getQuantity());
+        paymentService.issueRefund(refundInt);
 
-        // issue refund
-        paymentService.issueRefund(refund);
-
-        // create return record
-        ReturnRecord rec = new ReturnRecord();
-        rec.setReturnId(java.util.UUID.randomUUID().toString());
-        rec.setSale(sale);
-        rec.setReturnDate(java.time.LocalDateTime.now());
-        rec.setRefundAmount(refund);
-
-        return rec;
+        return new ReturnRecords(
+                UUID.randomUUID().toString(),
+                sale,
+                LocalDateTime.now(),
+                refundInt
+        );
     }
-    
 }

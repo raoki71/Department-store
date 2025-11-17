@@ -10,6 +10,13 @@ public class ReturnRecords {
     private java.time.LocalDateTime returnDate;
     private double refundAmount;
 
+    public ReturnRecords(String returnId, Sale sale, LocalDateTime returnDate, double refundAmount) {
+        this.returnId = returnId;
+        this.sale = sale;
+        this.returnDate = returnDate;
+        this.refundAmount = refundAmount;
+    }
+
     public String getReturnId() {
         return returnId;
     }
@@ -40,6 +47,16 @@ public class ReturnRecords {
 
     public void setRefundAmount(double refundAmount) {
         this.refundAmount = refundAmount;
+    }
+
+    @Override
+    public String toString() {
+        return "ReturnRecords{" +
+                "returnId='" + returnId + '\'' +
+                ", saleId=" + (sale != null ? sale.getSaleId() : null) +
+                ", returnDate=" + returnDate +
+                ", refundAmount=" + refundAmount +
+                '}';
     }
     
 }
