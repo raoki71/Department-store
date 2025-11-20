@@ -108,4 +108,3 @@ public class FittingRoom {
     	return initialItems.size(); 
     }
 }
-

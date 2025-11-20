@@ -2,7 +2,7 @@
 // jaidarm@iastate.edu
 // 385211868
 
-package dept_store;
+package use_cases;
 
 import java.util.ArrayList;
 import java.util.HashMap;
