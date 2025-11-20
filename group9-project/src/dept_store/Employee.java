@@ -1,24 +1,53 @@
+// Jaida Slife
+// jaidarm@iastate.edu
+// 385211868
+
 package dept_store;
-public abstract class Employee {
-	protected String name;
-	protected double salary;
-	protected String role;
-	
-	public Employee(String name, double salary, String role) {
-		this.name = name;
-		this.salary = salary;
-		this.role = role;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+
+public class Employee{
+	private int employeeId;
+	private String name;
+	private String position;
+	private double salary;
+	private ArrayList<HashMap<String, Object>> promotionHistory;
+
+	public Employee(int employeeId, String name, String position, double salary){
+	    this.employeeId = employeeId;
+	    this.name = name;
+	    this.position = position;
+	    this.salary = salary;
+	    this.promotionHistory = new ArrayList<>();
 	}
+
+	public void promote(String newPosition, double newSalary){
+	    HashMap<String, Object> record = new HashMap<>();
+	    record.put("oldPosition", this.position);
+	    record.put("newPosition", newPosition);
+	    record.put("oldSalary", this.salary);
+	    record.put("newSalary", newSalary);
+	    promotionHistory.add(record);
 	
-	public String getName() {
-		return name;
+	    this.position = newPosition;
+	    this.salary = newSalary;
+	    System.out.println(name + " promoted to " + newPosition + " with salary $" + newSalary);
 	}
+
+	public void pay(){
+	    System.out.println("Paying " + name + " $" + salary);
+	    }
 	
-	public double getSalaryInfo() {
-		return salary;
-	}
-	
-	public String getRole() {
-		return role;
-	}
+	    public String getName(){ 
+	    	return name; 
+	    }
+	    
+	    public String getPosition(){
+	    	return position;
+	    }
+	    public double getSalary(){ 
+	    	return salary;
+	    }
 }

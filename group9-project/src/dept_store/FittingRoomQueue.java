@@ -21,5 +21,4 @@ public class FittingRoomQueue {
     public List<ClothingItem> getItems() {
     	return items; 
     }
-
 }
