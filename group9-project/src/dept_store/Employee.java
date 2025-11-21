@@ -9,11 +9,11 @@ import java.util.HashMap;
 
 
 public class Employee{
-	private int employeeId;
-	private String name;
-	private String position;
-	private double salary;
-	private ArrayList<HashMap<String, Object>> promotionHistory;
+	protected int employeeId;
+	protected String name;
+	protected String position;
+	protected double salary;
+	protected ArrayList<HashMap<String, Object>> promotionHistory;
 
 	public Employee(int employeeId, String name, String position, double salary){
 	    this.employeeId = employeeId;

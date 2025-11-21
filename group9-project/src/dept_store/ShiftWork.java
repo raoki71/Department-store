@@ -3,7 +3,7 @@ import java.sql.Time;
 import java.util.Date;
 
 public class ShiftWork implements ScheduleEvent {
-	private OperatingHours operatingHours;
+	private OpenHours operatingHours;
 	private Weekday weekday;
 	private Time startTime;
 	private Time endTime;
@@ -13,7 +13,7 @@ public class ShiftWork implements ScheduleEvent {
 		isSlotAvailable = true;
 	}
 	
-	public void schedule(Weekday weekday, Time startTime, Time endTime) {
+	public void addSchedule(Weekday weekday, Time startTime, Time endTime) {
 		this.weekday = weekday;
 		this.startTime = startTime;
 		this.endTime = endTime;
