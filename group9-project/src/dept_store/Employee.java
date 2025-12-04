@@ -14,6 +14,7 @@ public class Employee{
 	protected String position;
 	protected double salary;
 	protected ArrayList<HashMap<String, Object>> promotionHistory;
+	private Availability availability;
 
 	public Employee(int employeeId, String name, String position, double salary){
 	    this.employeeId = employeeId;
@@ -21,6 +22,20 @@ public class Employee{
 	    this.position = position;
 	    this.salary = salary;
 	    this.promotionHistory = new ArrayList<>();
+		this.availability = new Availability();
+	}
+
+	public int getId() {
+        return employeeId;
+    }
+
+	public Availability getAvailability() {
+		return availability;
+	}
+
+	public boolean canWorkShift(Shift shift){
+		return availability.isAvailable(shift.getStartTime(), shift.getEndTime()) &&
+			position.equals(shift.getRole());
 	}
 
 	public void promote(String newPosition, double newSalary){
