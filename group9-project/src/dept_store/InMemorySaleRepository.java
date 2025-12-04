@@ -12,10 +12,20 @@ public class InMemorySaleRepository implements SaleRepository {
         return saleDb.get(receiptNumber); 
     }
 
-    // Optional helper: add a sale to the in-memory "database"
+    @Override
+    public double getTotalSales() {
+            return Math.random() * 2000;
+    }
+
+    @Override
+    public double getTotalRefunds(){
+        return  Math.random() * 500;
+    }
+
     public void save(Sale sale) {
         if (sale != null && sale.getReceiptNumber() != null) {
             saleDb.put(sale.getReceiptNumber(), sale);
         }
     }
+
 }

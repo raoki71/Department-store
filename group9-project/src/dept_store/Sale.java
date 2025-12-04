@@ -38,7 +38,6 @@ public class Sale {
         return cartItems;
     }
 
-    // small rename: plural to match the field
     public void setCartItems(List<CartItem> cartItems) {
         this.cartItems = cartItems;
     }

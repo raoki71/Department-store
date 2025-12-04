@@ -37,7 +37,7 @@ public class ReturnDemo {
         );
         sale2.setCartItems(List.of(ci2, ci3));
 
-        System.out.println("=== Processing return for sale R10002, item Shoes ===");
+        System.out.println("=== Processing return for sale " + sale2.getReceiptNumber() + " item Shoes ===");
         ReturnRecords rec1 = returnService.processReturn(sale2, "Shoes", true);
 
         System.out.println("Return created:");
@@ -46,7 +46,7 @@ public class ReturnDemo {
         System.out.println("Refund amount: $" + rec1.getRefundAmount());
         System.out.println("Return date: " + rec1.getReturnDate());
 
-        System.out.println("\n=== Processing return for sale R10001, item Shirt ===");
+        System.out.println("\n=== Processing return for sale" + sale1.getReceiptNumber() + " item Shirt ===");
         ReturnRecords rec2 = returnService.processReturn(sale1, "Shirt", true);
 
         System.out.println("Return created:");

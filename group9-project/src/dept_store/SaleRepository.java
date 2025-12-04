@@ -6,4 +6,6 @@ public interface SaleRepository {
 
     Sale findByReceiptNumber(String receiptNumber);
 
+    double getTotalSales();
+    double getTotalRefunds();
 }
