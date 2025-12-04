@@ -5,8 +5,8 @@ package dept_store;
  */
 public class CashRegister {
 	
-	private String regId;
-	private double total;
+	private String regId="";
+	private double total=0;
 	
 	private Cash cash=null;
 	
@@ -25,6 +25,7 @@ public class CashRegister {
 	 * @return
 	 */
 	public boolean addCash(Cash cash) {
+		this.cash = cash;
 		if(cash.getTotal() > 0) {
 			total += cash.getTotal();
 			return true;
@@ -39,12 +40,14 @@ public class CashRegister {
 	 * @throws ClassNotFoundException
 	 */
 	public double countCash() throws ClassNotFoundException {
-		return this.getCashInstance().getTotal();
+		System.out.println();
+		System.out.println("Register ID: " + getRegId());
+		return this.cash.getTotal();
 	}
-
-	private Cash getCashInstance() {
-		if(cash==null)
-			cash=new Cash();
-		return cash;
-	}
+//
+//	private Cash getCashInstance() {
+//		if(cash==null)
+//			cash=new Cash();
+//		return cash;
+//	}
 }

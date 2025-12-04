@@ -1,6 +1,8 @@
 package dept_store;
 
 import java.sql.Time;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Calendar;
 
 /**
@@ -23,6 +25,10 @@ public class OpenHoursController implements OpenHoursControllerInterface {
 	 */
 	public boolean controlOpenHours(Schedule sched) {
 		return this.getOpenHoursInstance().controlOpenHours(sched);
+	}
+	
+	public boolean changeTime(LocalTime time) {
+		return this.getOpenHoursInstance().changeTime(time);
 	}
 	
 	private OpenHours getOpenHoursInstance() {

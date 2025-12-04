@@ -2,6 +2,8 @@ package dept_store;
 
 
 import java.sql.Time;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 /**
  * @author Rei Aoki
@@ -11,18 +13,18 @@ import java.sql.Time;
 public class OpenHours {
 	// This array stores the Open weekdays of the department store
 	private Weekday[] weekdays;
-	private Time startTime;
-	private Time endTime;
+	private LocalTime startTime;
+	private LocalTime endTime;
 	
 	private Store store=null;
-//	public Time currentTime;
+	private LocalTime currentTime=null;
 	
 	/**
 	 * Arbitrary constructor without any arguments
 	 */
 	public OpenHours() {
-		this.startTime = new Time(9,0,0);
-		this.endTime = new Time(18,0,0);
+		this.startTime = LocalTime.of(9,0);
+		this.endTime = LocalTime.of(18,0);
 	}
 	
 	/**
@@ -30,7 +32,7 @@ public class OpenHours {
 	 * @param startTime
 	 * @param endTime
 	 */
-	public OpenHours(Time startTime, Time endTime) {
+	public OpenHours(LocalTime startTime, LocalTime endTime) {
 		weekdays = new Weekday [7];
 		this.startTime = startTime;
 		this.endTime = endTime;
@@ -40,7 +42,7 @@ public class OpenHours {
 	 * This method retrieves the start time of the department store
 	 * @return - the Time object specified by (hour, min, sec)
 	 */
-	public Time getStartTime() {
+	public LocalTime getStartTime() {
  		return startTime;
 	}
 	
@@ -48,10 +50,16 @@ public class OpenHours {
 	 * This method retrieves the end time of the department store
 	 * @return - the Time object specified by (hour, min, sec)
 	 */
-	public Time getEndTime() {
+	public LocalTime getEndTime() {
 		return endTime;
 	}
 	
+	public boolean changeTime(LocalTime time) {
+		this.currentTime = time;
+		if(currentTime!=null)
+			return false;
+		return true;
+	}
 	/**
 	 * This method adds the working dates to the data array
 	 * @param weekday
@@ -72,14 +80,19 @@ public class OpenHours {
 	 * @return - returns true if successfully open/close the store and false if there is no associated schedule
 	 */
 	public boolean controlOpenHours(Schedule sched) {
-		Time currentTime = new Time(8,59,0);
 		Store store = this.getStoreInstance();
 		if(sched!=null) {
-			if(currentTime.getTime() <= store.getStartTime().getTime()) {
-				System.out.println("Store is successfully opened");
+			if(currentTime.isBefore(getStartTime())){
+				System.out.println("===============================================");
+				System.out.println("Store is successfully opened: Time is " + getStartTime());
+				System.out.println("-----------------------------------------------");
+				System.out.println();
 				return store.openStore(sched);
-			} else if(currentTime.getTime() >= store.getEndTime().getTime()) {
-				System.out.println("Store is successfully closed");
+			} else if(currentTime.isAfter(getEndTime())) {
+				System.out.println();
+				System.out.println("-----------------------------------------------");
+				System.out.println("Store is successfully closed: Time is " + getEndTime());
+				System.out.println("===============================================");
 				return store.closeStore(sched);
 			} else {
 				return false;

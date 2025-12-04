@@ -1,6 +1,7 @@
 package dept_store;
 
 import java.sql.Time;
+import java.time.LocalTime;
 
 public class Store implements StoreInterface{
 	String name;
@@ -10,16 +11,16 @@ public class Store implements StoreInterface{
 	 * This method retrieves Time object that contains the start time of the department store.
 	 * @return - Time object set to 9am
 	 */
-	public Time getStartTime() {
-		return new Time(9,0,0);
+	public LocalTime getStartTime() {
+		return LocalTime.of(9,0);
 	}
 	
 	/**
 	 * This method retrieves the Time object that contains the end time of the department store.
 	 * @return - Time object set to 6pm
 	 */
-	public Time getEndTime() {
-		return new Time(18,0,0);
+	public LocalTime getEndTime() {
+		return LocalTime.of(18,0);
 	}
 	
 	/**
