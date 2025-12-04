@@ -52,10 +52,10 @@ private HashMap<String, CashRegister> regList=new HashMap<>();
 		}
 		return 0.0;
 	}
-
-	private Cash getCashInstance() {
-		if(cash==null)
-			cash=new Cash();
-		return cash;
-	}
+//
+//	private Cash getCashInstance() {
+//		if(cash==null)
+//			cash=new Cash();
+//		return cash;
+//	}
 }

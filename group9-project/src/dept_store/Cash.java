@@ -7,8 +7,12 @@ public class Cash {
 	private double total=0.0;
 	
 	public double getTotal() {
-		System.out.println("Count cash of today: $" + total);
 		return total;
+	}
+	
+	public double countTotal() {
+		System.out.println("Count cash of today: $" + total);
+		return getTotal();
 	}
 	
 	public double getPhysicalCashAmount() {

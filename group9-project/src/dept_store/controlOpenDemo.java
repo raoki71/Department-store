@@ -40,12 +40,23 @@ public class controlOpenDemo {
 		cash2.addAmount(500, true); // Digital
 		cash2.addAmount(400.36, true); // Digital
 		System.out.println();
+		
+		System.out.println();
+		System.out.println("---Reg02 gets amounts of cash---");
+		Cash cash3 = new Cash();
+		cash3.addAmount(5000, false); // Physical
+		cash3.addAmount(360, false); // Physical
+		cash3.addAmount(720, false); // Physical
+		System.out.println();
+		
 		try {
 			regDatabase.addCash(cash, "Reg01");
 			regDatabase.addCash(cash2, "Reg02");
+			regDatabase.addCash(cash3, "Reg03");
 			
 			regDatabase.countCash("Reg01");
 			regDatabase.countCash("Reg02");
+			regDatabase.countCash("Reg03");
 		} catch (ClassNotFoundException e) {
 			
 			// TODO Auto-generated catch block

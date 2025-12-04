@@ -39,10 +39,10 @@ public class CashRegister {
 	 * @return - 
 	 * @throws ClassNotFoundException
 	 */
-	public double countCash() throws ClassNotFoundException {
+	public double countCash() {
 		System.out.println();
 		System.out.println("Register ID: " + getRegId());
-		return this.cash.getTotal();
+		return this.cash.countTotal();
 	}
 //
 //	private Cash getCashInstance() {
